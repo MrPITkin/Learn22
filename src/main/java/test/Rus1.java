@@ -2,7 +2,9 @@ package test;
 
 public class Rus1 {
     public static void main(String[] args) {
-        System.out.println("Hey? йоголь");
-        System.out.println("How ? Ёжики !");
+        System.out.println("Hey? Г©Г®ГЈГ®Г«Гј");
+        System.out.println("How ? ВЁГ¦ГЁГЄГЁ !");
+        System.out.println("wHere ? СЂСѓСЃСЃРєРёР№ !");
+       
     }
 }
