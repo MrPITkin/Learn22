@@ -6,5 +6,6 @@ public class CarMoving {
         System.out.printf("Проверка проекта qwe \n");
         System.out.println("Проверка проекта кен");
         System.out.println("катироФФФФка");
+        System.out.println("Russian по русски");
     }
 }
