@@ -4,7 +4,7 @@ import lesson09.Account;
 /*
 import lesson09.implementation.PersonalAccount;
 import lesson09.implementation.SettlementAccount;
-можно заменить подстановкой '*'
+РјРѕР¶РЅРѕ Р·Р°РјРµРЅРёС‚СЊ РїРѕРґСЃС‚Р°РЅРѕРІРєРѕР№ '*'
 */
 import lesson09.implementation.*;
 
@@ -15,61 +15,61 @@ public class AccountLauncher {
     public static void main(String[] args) {
         Random rnd = new Random();
 
-        Account menIvan = new PersonalAccount("Иванов Виталий");
+        Account menIvan = new PersonalAccount("РРІР°РЅРѕРІ Р’РёС‚Р°Р»РёР№");
         double summa = 10_000;
-        boolean result = menIvan.replenish(summa); // пополнить счёт
+        boolean result = menIvan.replenish(summa); // РїРѕРїРѕР»РЅРёС‚СЊ СЃС‡С‘С‚
         menIvan.activeClient(true);
         summa = 1_000;
-        menIvan.withdraw(summa); // снять со счёта
+        menIvan.withdraw(summa); // СЃРЅСЏС‚СЊ СЃРѕ СЃС‡С‘С‚Р°
         summa = 5_000;
-        menIvan.replenish(summa); // пополнить счёт
+        menIvan.replenish(summa); // РїРѕРїРѕР»РЅРёС‚СЊ СЃС‡С‘С‚
         summa = 1_500;
-        menIvan.withdraw(summa); // снять со счёта
-        System.out.printf("Баланс счёта %s = %f\n", menIvan.getOwner(), menIvan.getBalance());
+        menIvan.withdraw(summa); // СЃРЅСЏС‚СЊ СЃРѕ СЃС‡С‘С‚Р°
+        System.out.printf("Р‘Р°Р»Р°РЅСЃ СЃС‡С‘С‚Р° %s = %f\n", menIvan.getOwner(), menIvan.getBalance());
 
-        Account clientAccount = new PersonalAccount("Арни Шварц");
+        Account clientAccount = new PersonalAccount("РђСЂРЅРё РЁРІР°СЂС†");
         clientAccount.activeClient(true);
-        clientAccount.setMaxLimit(1_234_567); // установлен верхний предел баланса
+        clientAccount.setMaxLimit(1_234_567); // СѓСЃС‚Р°РЅРѕРІР»РµРЅ РІРµСЂС…РЅРёР№ РїСЂРµРґРµР» Р±Р°Р»Р°РЅСЃР°
         clientAccount.replenish(1_000_000);
         clientAccount.replenish(543_210);
 
-        Account entityAccount = new SettlementAccount("кантора \"Рога и копыта\"");
+        Account entityAccount = new SettlementAccount("РєР°РЅС‚РѕСЂР° \"Р РѕРіР° Рё РєРѕРїС‹С‚Р°\"");
         entityAccount.activeClient(true);
-        entityAccount.setMaxLimit(1_234_567_890); // установлен верхний предел баланса
+        entityAccount.setMaxLimit(1_234_567_890); // СѓСЃС‚Р°РЅРѕРІР»РµРЅ РІРµСЂС…РЅРёР№ РїСЂРµРґРµР» Р±Р°Р»Р°РЅСЃР°
         entityAccount.replenish(12_000_000);
         entityAccount.replenish(543_210);
 
-        Account companyAccount = new SettlementAccount("аганизэйшэн 'Биру бир'");
+        Account companyAccount = new SettlementAccount("Р°РіР°РЅРёР·СЌР№С€СЌРЅ 'Р‘РёСЂСѓ Р±РёСЂ'");
         companyAccount.activeClient(true);
         companyAccount.replenish(10_000);
 
-        System.out.printf("Кол-во созданных расчётных счетов = %d\n",
+        System.out.printf("РљРѕР»-РІРѕ СЃРѕР·РґР°РЅРЅС‹С… СЂР°СЃС‡С‘С‚РЅС‹С… СЃС‡РµС‚РѕРІ = %d\n",
                 SettlementAccount.COUNT);
-// для модификатора STATIC у полей или методов класса можно обращаться
-// к ним напрямую, без создания объектов этого класса
+// РґР»СЏ РјРѕРґРёС„РёРєР°С‚РѕСЂР° STATIC Сѓ РїРѕР»РµР№ РёР»Рё РјРµС‚РѕРґРѕРІ РєР»Р°СЃСЃР° РјРѕР¶РЅРѕ РѕР±СЂР°С‰Р°С‚СЊСЃСЏ
+// Рє РЅРёРј РЅР°РїСЂСЏРјСѓСЋ, Р±РµР· СЃРѕР·РґР°РЅРёСЏ РѕР±СЉРµРєС‚РѕРІ СЌС‚РѕРіРѕ РєР»Р°СЃСЃР°
 
-        System.out.printf("БИК = %s\n", PersonalAccount.getBic());
+        System.out.printf("Р‘РРљ = %s\n", PersonalAccount.getBic());
 
-        System.out.printf("Баланс счёта убитыми енотами = %f\n",
+        System.out.printf("Р‘Р°Р»Р°РЅСЃ СЃС‡С‘С‚Р° СѓР±РёС‚С‹РјРё РµРЅРѕС‚Р°РјРё = %f\n",
                 ((SettlementAccount) companyAccount).covertValuta());
 
         Account menInBlack = new Account();
         menInBlack.activeClient(true);
         menInBlack.withdraw(-99);
         menInBlack.replenish(-199);
-        System.out.printf("Баланс счёта %s = %f\n", menInBlack.getOwner(),
+        System.out.printf("Р‘Р°Р»Р°РЅСЃ СЃС‡С‘С‚Р° %s = %f\n", menInBlack.getOwner(),
                 menInBlack.getBalance());
 
-// анонимный класс, созаёт объект; т.к. <BestPersonalAccount> с модификатором <abstract>
+// Р°РЅРѕРЅРёРјРЅС‹Р№ РєР»Р°СЃСЃ, СЃРѕР·Р°С‘С‚ РѕР±СЉРµРєС‚; С‚.Рє. <BestPersonalAccount> СЃ РјРѕРґРёС„РёРєР°С‚РѕСЂРѕРј <abstract>
         Account anonim = new BestPersonalAccount(""){
             @Override
             protected void printBalance() {}
         };
 
-        Account huchiMen = new BestOfBestPersonalAccount("Тугр");
+        Account huchiMen = new BestOfBestPersonalAccount("РўСѓРіСЂ");
         huchiMen.activeClient(true);
         huchiMen.withdraw(-123);
-        System.out.printf("Баланс счёта %s = %f\n", huchiMen.getOwner(),
+        System.out.printf("Р‘Р°Р»Р°РЅСЃ СЃС‡С‘С‚Р° %s = %f\n", huchiMen.getOwner(),
                 ((BestOfBestPersonalAccount) huchiMen).getBalance());
     }
 }

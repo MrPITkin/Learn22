@@ -10,6 +10,6 @@ public class BestOfBestPersonalAccount extends BestPersonalAccount {
 
     @Override
     protected void printBalance() {
-        System.out.printf("<ÁÈÊ> ëó÷øåãî êëèåíòà> = %s\n", BestOfBestPersonalAccount.getBic());
+        System.out.printf("<Ð‘Ð˜Ðš> Ð»ÑƒÑ‡ÑˆÐµÐ³Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ð°> = %s\n", BestOfBestPersonalAccount.getBic());
     }
 }

@@ -2,12 +2,12 @@ package lesson09;
 
 public class Account {
 
-    private double balance = 1_000_000; // гнусный лям
-    private double maxLimit = Double.MAX_VALUE; // потолок
-    private double minLimit = 0; // нижний предел
-    // private String owner = "ты хто такой ?";
+    private double balance = 1_000_000; // РіРЅСѓСЃРЅС‹Р№ Р»СЏРј
+    private double maxLimit = Double.MAX_VALUE; // РїРѕС‚РѕР»РѕРє
+    private double minLimit = 0; // РЅРёР¶РЅРёР№ РїСЂРµРґРµР»
+    // private String owner = "С‚С‹ С…С‚Рѕ С‚Р°РєРѕР№ ?";
     private final String owner;
-// поле класса (переменная) с модификатором <final> может быть проинициализировано ОДИН раз
+// РїРѕР»Рµ РєР»Р°СЃСЃР° (РїРµСЂРµРјРµРЅРЅР°СЏ) СЃ РјРѕРґРёС„РёРєР°С‚РѕСЂРѕРј <final> РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСЂРѕРёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°РЅРѕ РћР”РРќ СЂР°Р·
     private boolean blocked;
 
     public Account(String name) {
@@ -17,40 +17,40 @@ public class Account {
     }
 
     public  Account() {
-        //this.owner = "хто же ты ?";
-        this( "`хто же ты ?`");
-// в конструкторе без параметра для поля класса с модификатором <final>
-// должно быть определено значение
+        //this.owner = "С…С‚Рѕ Р¶Рµ С‚С‹ ?";
+        this( "`С…С‚Рѕ Р¶Рµ С‚С‹ ?`");
+// РІ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРµ Р±РµР· РїР°СЂР°РјРµС‚СЂР° РґР»СЏ РїРѕР»СЏ РєР»Р°СЃСЃР° СЃ РјРѕРґРёС„РёРєР°С‚РѕСЂРѕРј <final>
+// РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РѕРїСЂРµРґРµР»РµРЅРѕ Р·РЅР°С‡РµРЅРёРµ
     }
 
     public boolean replenish(double amount) {
-// пополнение счёта
+// РїРѕРїРѕР»РЅРµРЅРёРµ СЃС‡С‘С‚Р°
         if (blocked || balance + amount > maxLimit) {
-            System.out.printf("Счёт клиента %s пополнить на %f не удалось.\n"
+            System.out.printf("РЎС‡С‘С‚ РєР»РёРµРЅС‚Р° %s РїРѕРїРѕР»РЅРёС‚СЊ РЅР° %f РЅРµ СѓРґР°Р»РѕСЃСЊ.\n"
                     , this.owner, amount);
             return false;
         }
         balance += amount;
-        System.out.printf("Счёт клиента %s пополнился на %f\n",
+        System.out.printf("РЎС‡С‘С‚ РєР»РёРµРЅС‚Р° %s РїРѕРїРѕР»РЅРёР»СЃСЏ РЅР° %f\n",
                 this.owner, amount);
         return true;
     }
 
     public boolean withdraw(double amount) {
-// снятие со счёта
+// СЃРЅСЏС‚РёРµ СЃРѕ СЃС‡С‘С‚Р°
         if (this.balance - amount >= this.minLimit && !this.blocked) {
             balance -= amount;
-            System.out.printf("Счёт клиента %s уменьшился на %f\n",
+            System.out.printf("РЎС‡С‘С‚ РєР»РёРµРЅС‚Р° %s СѓРјРµРЅСЊС€РёР»СЃСЏ РЅР° %f\n",
                     this.owner, amount);
             return true;
         }
-        System.out.printf("Операция уменьшения счёта %s на %f не удалась.\n"
+        System.out.printf("РћРїРµСЂР°С†РёСЏ СѓРјРµРЅСЊС€РµРЅРёСЏ СЃС‡С‘С‚Р° %s РЅР° %f РЅРµ СѓРґР°Р»Р°СЃСЊ.\n"
                 , this.owner, amount);
         return false;
     }
 
     protected boolean isBlocked() {
-// protected аналогичен private + доступ потомкам этого класса в том же пакете
+// protected Р°РЅР°Р»РѕРіРёС‡РµРЅ private + РґРѕСЃС‚СѓРї РїРѕС‚РѕРјРєР°Рј СЌС‚РѕРіРѕ РєР»Р°СЃСЃР° РІ С‚РѕРј Р¶Рµ РїР°РєРµС‚Рµ
         return this.blocked;
     }
 
@@ -61,7 +61,7 @@ public class Account {
     public final double getBalance() {
         return balance;
     }
-// модификатор <final> запрещает переопределение метода в порождаемых классах
+// РјРѕРґРёС„РёРєР°С‚РѕСЂ <final> Р·Р°РїСЂРµС‰Р°РµС‚ РїРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РјРµС‚РѕРґР° РІ РїРѕСЂРѕР¶РґР°РµРјС‹С… РєР»Р°СЃСЃР°С…
 
     public String getOwner() {
         return owner;
