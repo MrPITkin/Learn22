@@ -11,28 +11,30 @@ public class CarMoving {
         int minLimit = 3; // минимальное число тачек
         int maxLimit = 7; // минимальное число тачек
         float distance = 987.65f; // требуемая дистанция
-        passingerArray(minLimit, maxLimit, distance); // наполнение автопарка легковушек
-    }
-
-    private static void passingerArray(int minLimit, int maxLimit, float goal) {
         PassengerCar[] car = new PassengerCar[autoQuantity(minLimit, maxLimit)];
         System.out.printf("Автопарк легковушек состоит из %d тачек.\n", car.length);
+        passingerArray(minLimit, maxLimit, car); // наполнение автопарка легковушек
+        carRace(car, distance); // в дорогу
+    }
+
+    private static void passingerArray(int minLimit, int maxLimit, Automobile[] car) {
         for (int i = 0; i < car.length; i++) {
             float probeg = new Random().nextFloat(98.76f);
-            //System.out.printf("пробег тачи %f км.\n", probeg);
             car[i] = new PassengerCar();
             car[i].move(probeg);
-            System.out.printf("пробег через getter тачи %f км.\n", car[i].getWay());
+            System.out.printf("пробег легковушки %f км.\n", car[i].getWay());
         }
+    }
+
+    private static void carRace(Automobile[] car, float goal) {
         float currentWay = 0;
         do {
             for (int i = 0; i < car.length && currentWay < goal; i++) {
                 currentWay += car[i].getWay();
-                System.out.printf("пройденный путь %f км.\n", currentWay);
+                System.out.printf("Тачкa %d достигла отметки %f км.\n", i+1, currentWay);
             }
             System.out.printf("Весь автопарк проехал %f км.\n", currentWay);
         } while (currentWay < goal);
-
     }
 
     private static int autoQuantity(int minLimit, int maxLimit) {
