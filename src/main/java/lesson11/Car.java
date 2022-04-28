@@ -23,7 +23,7 @@ public class Car implements Cloneable {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
+    public/*protected тоже допустимо*/ Object clone() throws CloneNotSupportedException {
         Car varClone = (Car) super.clone();
         varClone.setDvizhok(this.dvizhok.clone());
         return varClone;
