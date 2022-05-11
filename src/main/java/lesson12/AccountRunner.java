@@ -7,11 +7,12 @@ public class AccountRunner {
         Account account = new Account(1_000);
         System.out.println("Текущий баланс " + account.getBalance());
         try {
-            int amount = 500;
+            int amount = 5_000;
             account.withdraw(amount);
 //        } catch (IllegalArgumentException err) {
 //            System.out.println("Снятия не произошло!");
         } catch (NotEnoughMoneyException e) {
+            e.printStackTrace();
             System.out.println("Снятия не произошло! Состояние баланса " + e.getBalance());
         }
         System.out.println("Текущий баланс " + account.getBalance());
