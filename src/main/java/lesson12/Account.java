@@ -13,7 +13,7 @@ public class Account {
         balance += amount;
     }
 
-    public void withdraw(double amount) {
+    public double withdraw(double amount) {
         if (balance < amount) {
 /*
             throw new IllegalArgumentException("Произошла ошибка снятия денежных средств." +
@@ -23,6 +23,7 @@ public class Account {
                     "Текущий баланс меньше суммы снятия");
         }
         this.balance -= amount;
+        return this.balance;
     }
 
     public double getBalance() {
