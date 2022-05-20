@@ -12,8 +12,10 @@ import java.util.stream.IntStream;
 public class ContactRunner {
 
 //    private static final Integer LIMIT = 154;
-    private static final Integer LIMIT = 10_000;
-    private static final Integer LIMIT_OF_LINKED_CONTACTS = 100;
+//    private static final Integer LIMIT = 10_000;
+    private static final Integer LIMIT = 5_000;
+//    private static final Integer LIMIT_OF_LINKED_CONTACTS = 100;
+    private static final Integer LIMIT_OF_LINKED_CONTACTS = 20;
 
     public static void main(String[] args) {
 //        long seconds = TimeUnit.SECONDS.convert(spentTime, TimeUnit.MILLISECONDS);
