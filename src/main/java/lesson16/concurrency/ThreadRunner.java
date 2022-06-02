@@ -8,15 +8,18 @@ public class ThreadRunner {
         Thread.currentThread().setPriority(8);
         int a = 15;
         int b = 20;
-        Thread printerThread1 = new PrinterThread("Первый поток printer", "Привет, мир", 5);
+        Thread printerThread1 = new PrinterThread("Первый поток printer",
+                "Привет, мир", 5);
         Thread.State state = printerThread1.getState();
-        Thread printerThread2 = new PrinterThread("Добро пожаловать!", 1, true);
+        Thread printerThread2 = new PrinterThread("Добро пожаловать!" +
+                " <daemon - поток>", 1, true);
         printerThread1.start();
 //        printerThread1.join();
         printerThread2.start();
 //        printerThread2.join();
-        new Thread(() -> print(Thread.currentThread().getName() + ": " + summa(a, b))).start();
-        System.out.println(Thread.currentThread().getName());
+        new Thread(() -> print(Thread.currentThread().getName() +
+                ": Поток сложения: " + summa(a, b))).start();
+        System.out.println("Главный поток: " + Thread.currentThread().getName());
 
 //        Thread.sleep(60 * 1000);
     }
