@@ -3,6 +3,7 @@ package lesson18.dto;
 import lombok.*;
 
 import java.io.Serial;
+import java.io.Serializable;
 
 // аннотации плагина Lombok
 @Data
@@ -12,9 +13,9 @@ import java.io.Serial;
 @NoArgsConstructor
 @AllArgsConstructor
 //@RequiredArgsConstructor //конструктор для final полей
-@ToString
+//@ToString
 
-public class Person {
+public class Person implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 2L;
