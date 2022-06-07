@@ -12,7 +12,7 @@ import java.io.Serial;
 @NoArgsConstructor
 @AllArgsConstructor
 //@RequiredArgsConstructor //конструктор для final полей
-//@ToString
+@ToString
 
 public class Person {
 
@@ -30,6 +30,7 @@ public class Person {
 
     public void beOlder() throws Exception {
         this.age++;
+        System.out.println("Возраст " + this.name + " = " + ++this.age);
     }
 
 //    @Override
