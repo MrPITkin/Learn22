@@ -11,7 +11,7 @@ public class InputStreamRunner {
 
     @SneakyThrows({IOException.class})
     public static void main(String[] args) {
-        String outFile = "R:\\test\\teSt.txt";
+        String outFile = "R:\\test\\teSt.Txt";  // каталог нужно создать, файл нет
         try (InputStream fileInputStream = InputStreamRunner.class.getResourceAsStream("/file.txt")) {
             byte[] bytes = fileInputStream.readAllBytes();
             System.out.println(new String(bytes));
@@ -39,7 +39,7 @@ public class InputStreamRunner {
         try (BufferedReader br = new BufferedReader(
                 new InputStreamReader(InputStreamRunner.class.getResourceAsStream("/file.txt")/*,
                         StandardCharsets.ISO_8859_1.name()*/))) {
-            System.out.println("Кодировка иная:\n" + br.lines().collect(Collectors.joining()));
+            System.out.println("Сборка через Collectors:\n" + br.lines().collect(Collectors.joining()));
         }
     }
 }
