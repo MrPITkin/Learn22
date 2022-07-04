@@ -47,7 +47,6 @@ public class IVehicleProxyRunner {
                     args[i] = Integer.decode(de.value());
                 }
             }
-
             DefaultValue annotation = declaredMethod.getAnnotation(DefaultValue.class);
             Object result = declaredMethod.invoke(origin, args);
             if (result == null && annotation != null) {
