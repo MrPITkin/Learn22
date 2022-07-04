@@ -25,6 +25,7 @@ public class IVehicleProxyRunner {
         golf.setHeigth(1.2);
         IVehicle proxyGolf = (IVehicle) Proxy.newProxyInstance(IVehicleProxyRunner.class.getClassLoader(),
                 new Class[]{IVehicle.class},
+
                 new ProxyHandler(golf));
 
         System.out.println("Пример использования аннотации в качестве параметра метода: " + proxyGolf.getHeigth());
