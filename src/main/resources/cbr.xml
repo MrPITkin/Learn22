@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--для lesson20.XPathRunner-->
 <ValCurs Date="09.07.2022" name="Foreign Currency Market">
     <Valute ID="R01010">
         <NumCode>036</NumCode>
