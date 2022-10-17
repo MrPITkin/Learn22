@@ -21,6 +21,7 @@
         <junit.version>4.13.2</junit.version>
         <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <json.version>20140107</json.version>
     </properties>
 
     <dependencies>
@@ -63,6 +64,11 @@
             <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
             <version>${opencsv.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${json.version}</version>
         </dependency>
 <!--
         <dependency>
